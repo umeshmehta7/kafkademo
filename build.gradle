@@ -1,0 +1,30 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.kafka'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+// https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.kafka:spring-kafka'
+	//implementation 'com.fasterxml.jackson.core:jackson-databind:2.5.0'
+	implementation 'com.twitter:hbc-core:2.2.0'
+	implementation 'org.apache.commons:commons-lang3:3.0'
+
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.springframework.kafka:spring-kafka-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+}
+// https://mvnrepository.com/artifact/com.twitter/hbc-core
+
+test {
+	useJUnitPlatform()
+}
