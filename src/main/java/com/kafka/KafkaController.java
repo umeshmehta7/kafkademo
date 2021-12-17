@@ -23,7 +23,7 @@ public class KafkaController
 	public ResponseEntity<String> doWrite(@RequestParam(required = true, defaultValue = "firstTopic") String topic, @RequestParam( required = false) String key, @RequestParam(required = true) String value)
 	{
 		kafkaProducerService.write(topic, key, value);
-		return ResponseEntity.ok().body("success");
+		return ResponseEntity.ok().body("===success==");
 	}
 
 	@RequestMapping("/read")
