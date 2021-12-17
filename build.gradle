@@ -15,7 +15,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
 	implementation 'org.springframework.kafka:spring-kafka'
-	//implementation 'com.fasterxml.jackson.core:jackson-databind:2.5.0'
+
 	implementation 'com.twitter:hbc-core:2.2.0'
 	implementation 'org.apache.commons:commons-lang3:3.0'
 

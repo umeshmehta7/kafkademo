@@ -1,0 +1,13 @@
+name: test workflow
+on: [push, pull_request]
+jobs:
+  run-shell-command:
+    runs-on:  ubuntu-latest
+    steps:
+      - name: print message
+        run: echo "Welcome to github action"
+
+      - name: multi line command
+        run: |
+          pwd
+          ls
