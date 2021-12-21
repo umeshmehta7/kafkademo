@@ -5,4 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: test flow
-        run: pwd
+        run: |
+          java -version
