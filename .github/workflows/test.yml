@@ -11,3 +11,9 @@ jobs:
 
       - name: installed software
         run: apt list --installed
+
+  run-java-commands:
+    runs-on: ubuntu-latest
+    steps:
+      - name: print java version
+        run: java -version
