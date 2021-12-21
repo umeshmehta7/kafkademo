@@ -5,5 +5,5 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - run: pwd
-
+      - run: pwd && ls
       - name: test running
