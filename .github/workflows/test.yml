@@ -7,3 +7,4 @@ jobs:
       - name: test flow
         run: |
           java -version
+          mysql --version
