@@ -6,9 +6,7 @@ jobs:
     steps:
       - name: create a file
         run: |
-          cat > myfile.txt
-            Hello world
-            ^C
+          echo "Hello world " >> myfile.txt
 
       - uses: actions/checkout@v2
 
