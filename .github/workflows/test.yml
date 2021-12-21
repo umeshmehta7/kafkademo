@@ -6,13 +6,3 @@ jobs:
     steps:
       - name: umesh
       - run: pwd
-  run-shell-command:
-    runs-on:  ubuntu-latest
-    steps:
-      - name: print message
-        run: echo "Welcome to github action"
-
-      - name: multi line command
-        run: |
-          pwd
-          ls
