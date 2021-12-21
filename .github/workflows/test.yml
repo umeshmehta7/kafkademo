@@ -4,8 +4,8 @@ jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
-     - name: umesh
-     - run: pwd
+      - name: umesh
+      - run: pwd
   run-shell-command:
     runs-on:  ubuntu-latest
     steps:
