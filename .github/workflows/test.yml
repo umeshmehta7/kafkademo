@@ -4,15 +4,21 @@ jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
-      - name: test flow
+      - name: create a file
         run: |
-          java -version
-          mysql --version
+          cat -> myfile.txt
+          Hello world
 
-      - name: installed software
-        run: apt list --installed
+      - uses: actions/checkout@v2
 
-  run-java-commands:
+      - name: Cache myfile
+        id: cache-myfile
+        uses: actions/cache@v2
+        with:
+          path: myfile.txt
+          key: ${{ runner.os }}-myfile
+
+  print-cached-file:
     runs-on: ubuntu-latest
     steps:
       - name: print java version
