@@ -8,7 +8,7 @@ jobs:
         run: |
           echo "Hello world " >> myfile.txt
           pwd
-          ls -a
+          ls -la
 
       - uses: actions/checkout@v2
 
@@ -16,7 +16,7 @@ jobs:
         id: cache-myfile
         uses: actions/cache@v2
         with:
-          path: myfile.txt
+          path: /home/runner/work/kafkademo/kafkademo/myfile.txt
           key: ${{ runner.os }}-myfile
 
   print-cached-file:
