@@ -7,6 +7,8 @@ jobs:
       - name: create a file
         run: |
           echo "Hello world " >> myfile.txt
+          pwd
+          ls -a
 
       - uses: actions/checkout@v2
 
