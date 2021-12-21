@@ -4,5 +4,6 @@ jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
+      - name: test flow
       - run: pwd
       - run: pwd && ls
