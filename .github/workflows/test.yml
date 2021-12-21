@@ -1,6 +1,10 @@
 name: test workflow
 on: [push, pull_request]
 jobs:
+  my-test-command:
+    runs-on: ubuntu-latest
+    name: umesh
+    run: pwd
   run-shell-command:
     runs-on:  ubuntu-latest
     steps:
