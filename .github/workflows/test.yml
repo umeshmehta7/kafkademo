@@ -7,8 +7,8 @@ jobs:
       - name: create a file
         run: |
           cat > myfile.txt
-          Hello world
-          ^C
+            Hello world
+            ^C
 
       - uses: actions/checkout@v2
 
