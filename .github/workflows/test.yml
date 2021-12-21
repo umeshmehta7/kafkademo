@@ -4,20 +4,21 @@ jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
-      - name: create a file
-        run: |
-          echo "Hello world " >> myfile.txt
-          pwd
-          ls -la
-
       - uses: actions/checkout@v2
 
-      - name: Cache myfile
-        id: cache-myfile
+      - name: Cache Primes
+        id: cache-primes
         uses: actions/cache@v2
         with:
-          path: ./myfile.txt
-          key: ${{ runner.os }}-myfile
+          path: prime-numbers
+          key: ${{ runner.os }}-primes
+
+      - name: Generate Prime Numbers
+        if: steps.cache-primes.outputs.cache-hit != 'true'
+        run: /generate-primes.sh -d prime-numbers
+
+      - name: Use Prime Numbers
+        run: /primes.sh -d prime-numbers
 
   print-cached-file:
     runs-on: ubuntu-latest
