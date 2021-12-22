@@ -8,6 +8,7 @@ jobs:
       - name: Print path
         run: |
           pwd
+          ls -a
 
       - name: Cache Primes
         id: cache-primes
