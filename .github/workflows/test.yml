@@ -10,19 +10,15 @@ jobs:
           pwd
           ls -a
 
-      - name: Cache Primes
-        id: cache-primes
+      - name: Cache readme
+        id: cache-readme
         uses: actions/cache@v2
         with:
-          path: prime-numbers
-          key: ${{ runner.os }}-primes
+          path: /home/runner/work/kafkademo/kafkademo/README.md
+          key: ${{ runner.os }}-readme
 
-      - name: Generate Prime Numbers
-        if: steps.cache-primes.outputs.cache-hit != 'true'
-        run: /generate-primes.sh -d prime-numbers
-
-      - name: Use Prime Numbers
-        run: /primes.sh -d prime-numbers
+      - name: Print readme file from cache
+        run: echo "${{ steps.cache-readme.outputs.cache-hit}}"
 
   print-cached-file:
     runs-on: ubuntu-latest
