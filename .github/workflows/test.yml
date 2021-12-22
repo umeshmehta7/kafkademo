@@ -5,16 +5,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/cache@v2
-
-      - name: Cache readme
-        id: cache-readme
+      - name: Print path
         run: |
           pwd
           ls -a
+
+      - name: Cache readme
+        id: cache-readme
+        uses: actions/cache@v2
         with:
           path: README.md
-          key: ${{ runner.os }}-readme
+          key: ${{ runner.os }}-readme-1
 
       - name: Print readme file from cache
         run: echo "${{ steps.cache-readme.outputs.cache-hit}}"
