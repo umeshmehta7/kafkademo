@@ -14,7 +14,7 @@ jobs:
         id: cache-readme
         uses: actions/cache@v2
         with:
-          path: /home/runner/work/kafkademo/kafkademo/README.md
+          path: README.md
           key: ${{ runner.os }}-readme
 
       - name: Print readme file from cache
