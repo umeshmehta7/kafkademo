@@ -6,9 +6,9 @@ jobs:
     steps:
       - name: Setup ant
         run: |
-          sudo yes | apt search ant
-          sudo yes | apt install ant@1.9.1
+          sudo yes | apt install ant
           ant -version
+          which ant
 
       - uses: actions/checkout@v2
       - name: Print path
