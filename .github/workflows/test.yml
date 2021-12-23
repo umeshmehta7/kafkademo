@@ -4,6 +4,11 @@ jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
+      - name: Setup ant
+        run: |
+          sudo yes | apt install ant@1.9.1
+          ant -version
+
       - uses: actions/checkout@v2
       - name: Print path
         run: |
