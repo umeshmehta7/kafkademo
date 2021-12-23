@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Setup ant
         run: |
-          sudo yes | apt search
+          sudo yes | apt search ant
           sudo yes | apt install ant@1.9.1
           ant -version
 
