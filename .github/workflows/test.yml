@@ -6,9 +6,16 @@ jobs:
     steps:
       - name: Setup ant
         run: |
-          sudo yes | apt install ant
-          sudo yes | ant -version
-          sudo yes | locate ant
+          mkdir /tmp
+          cd /tmp
+          wget http://mirror.downloadvn.com/apache//ant/binaries/apache-ant-1.9.1-bin.tar.gz
+          sudo tar -xf apache-ant-1.9.1-bin.tar.gz -C /usr/local
+          sudo ln -s /usr/local/apache-ant-1.9.1/ /usr/local/ant
+          sudo vi /etc/profile.d/ant.sh
+          export ANT_HOME=/usr/local/ant
+          export PATH=${ANT_HOME}/bin:${PATH}
+          source /etc/profile
+          ant -version
 
       - uses: actions/checkout@v2
       - name: Print path
