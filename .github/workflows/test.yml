@@ -8,9 +8,15 @@ jobs:
         run: |
           sudo apt install zip
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
+          echo "======="
+          pwd
+          echo "======="
           unzip -o -q apache-ant-1.9.1-bin.zip -d /usr/local
-          sudo ln -s /usr/local/apache-ant-1.9.1/ /usr/local/ant
-          sudo vi /etc/profile.d/ant.sh
+          echo "======="
+          pwd
+          echo "======="
+          sudo yes | ln -s /usr/local/apache-ant-1.9.1/ /usr/local/ant
+          sudo yes | vi /etc/profile.d/ant.sh
           export ANT_HOME=/usr/local/ant
           export PATH=${ANT_HOME}/bin:${PATH}
           source /etc/profile
