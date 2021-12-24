@@ -19,7 +19,7 @@ jobs:
           echo "======="
           pwd
           echo "======="
-          unzip -o -q apache-ant-1.9.1-bin.zip -d ~/Tools/ant
+          unzip -o -q ~/work/kafkademo/kafkademo/apache-ant-1.9.1-bin.zip -d ~/Tools/ant
           echo "======="
           pwd
           echo "======="
