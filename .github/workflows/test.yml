@@ -11,15 +11,16 @@ jobs:
           echo "======="
           pwd
           echo "======="
-          unzip -o -q apache-ant-1.9.1-bin.zip -d /usr/local
+          mkdir ~/Tools/ant
+          unzip -o -q apache-ant-1.9.1-bin.zip -d ~/Tools/ant
           echo "======="
           pwd
           echo "======="
-          sudo yes | ln -s /usr/local/apache-ant-1.9.1/ /usr/local/ant
-          sudo yes | vi /etc/profile.d/ant.sh
-          export ANT_HOME=/usr/local/ant
-          export PATH=${ANT_HOME}/bin:${PATH}
-          source /etc/profile
+          cd ~/Tools/ant
+          ls -l
+#          export ANT_HOME=/usr/local/ant
+#          export PATH=${ANT_HOME}/bin:${PATH}
+#          source /etc/profile
           ant -version
 
       - uses: actions/checkout@v2
