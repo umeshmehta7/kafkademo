@@ -8,17 +8,14 @@ jobs:
         run: |
           sudo apt install zip
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
-          unzip -o -q ~/work/kafkademo/kafkademo/apache-ant-1.9.1-bin.zip
-          cd ~
-          mkdir Tools
-          cd Tools
-          mkdir ant
-          mv  ~/work/kafkademo/kafkademo/apache-ant-1.9.1/* ~/Tools/ant
-          cd ~/Tools/ant
-          ls -l
-          echo "=== before == "
-          ant -version
-          echo "=== before end == "
+          unzip -o -q apache-ant-1.9.1-bin.zip
+          mkdir -p ~/Tools/ant
+          mv  apache-ant-1.9.1/* ~/Tools/ant
+          dir_path=$(ls -A '~/Tools/ant')
+          if [[ ! -z "$dir_path" ]]; then
+          else
+              mv apache-ant-1.9.1/* ~/Tools/ant
+          fi
           export ANT_HOME="~/Tools/ant"
           export PATH=${ANT_HOME}/bin:${PATH}
           source /etc/profile
