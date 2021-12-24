@@ -11,7 +11,8 @@ jobs:
           unzip -o -q apache-ant-1.9.1-bin.zip
           mkdir -p ~/Tools/ant
           mv  apache-ant-1.9.1/* ~/Tools/ant
-          dir_path=$(ls -A '~/Tools/ant')
+          echo "====pass===="
+          dir_path=$(ls -A '~/Tools/ant/')
           if [[ ! -z "$dir_path" ]]; then
           else
               mv apache-ant-1.9.1/* ~/Tools/ant
