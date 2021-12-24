@@ -3,9 +3,11 @@ on: [push, pull_request]
 jobs:
   my-test-command:
     runs-on: ubuntu-latest
+    shell: bash
     steps:
       - name: Setup ant
         run: |
+          sudo apt uninstall ant
           sudo apt install zip
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
           unzip -o -q apache-ant-1.9.1-bin.zip
