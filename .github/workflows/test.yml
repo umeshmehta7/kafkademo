@@ -8,6 +8,7 @@ jobs:
         run: |
           sudo apt install zip
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
+          unzip -o -q ~/work/kafkademo/kafkademo/apache-ant-1.9.1-bin.zip
           echo "======="
           pwd
           ls
@@ -19,7 +20,7 @@ jobs:
           echo "======="
           pwd
           echo "======="
-          unzip -o -q ~/work/kafkademo/kafkademo/apache-ant-1.9.1-bin.zip -d ~/Tools/ant
+          mv  ~/work/kafkademo/kafkademo/apache-ant-1.9.1/* ~/Tools/ant
           echo "======="
           pwd
           echo "======="
