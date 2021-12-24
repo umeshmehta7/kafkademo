@@ -26,6 +26,19 @@ jobs:
           ant -version
           echo "=== after end == "
 
+
+      - name: SonarCloud Scan
+        id: sonar-scan
+        if: ${{ needs.set-up.outputs.runSonarAnalysis == 'true' && matrix.plan == 'sonar' }}
+        uses: sonarsource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=kafkademo
+            -Dsonar.projectKey=kafkademo
+
       - uses: actions/checkout@v2
       - name: Print path
         run: |
