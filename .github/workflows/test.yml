@@ -10,6 +10,7 @@ jobs:
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
           echo "======="
           pwd
+          ls
           echo "======="
           cd ~
           mkdir Tools
