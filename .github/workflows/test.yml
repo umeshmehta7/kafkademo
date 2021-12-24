@@ -3,7 +3,6 @@ on: [push, pull_request]
 jobs:
   my-test-command:
     runs-on: ubuntu-latest
-    shell: bash
     steps:
       - name: Setup ant
         run: |
