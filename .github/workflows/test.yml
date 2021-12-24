@@ -19,9 +19,6 @@ jobs:
           echo "======="
           cd ~/Tools/ant
           ls -l
-#          export ANT_HOME=/usr/local/ant
-#          export PATH=${ANT_HOME}/bin:${PATH}
-#          source /etc/profile
           ant -version
 
       - uses: actions/checkout@v2
