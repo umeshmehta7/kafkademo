@@ -10,12 +10,12 @@ jobs:
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
           unzip -o -q apache-ant-1.9.1-bin.zip
           mkdir -p ~/Tools/ant
-          mv  apache-ant-1.9.1/* ~/Tools/ant
           echo "====pass===="
-          dir_path=$(ls -A '~/Tools/ant/')
-          if [[ ! -z "$dir_path" ]]; then
+          DIR='~/Tools/ant/'
+          if [ "$(ls -A $DIR)" ]; then
+              echo "$DIR is not empty"
           else
-              mv apache-ant-1.9.1/* ~/Tools/ant
+               mv apache-ant-1.9.1/* ~/Tools/ant
           fi
           export ANT_HOME="~/Tools/ant"
           export PATH=${ANT_HOME}/bin:${PATH}
