@@ -11,7 +11,8 @@ jobs:
           echo "======="
           pwd
           echo "======="
-          mkdir ~/Tools/ant
+          cd ~
+          mkdir Tools/ant
           unzip -o -q apache-ant-1.9.1-bin.zip -d ~/Tools/ant
           echo "======="
           pwd
