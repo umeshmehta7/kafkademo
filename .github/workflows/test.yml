@@ -1,9 +1,11 @@
 name: test workflow
 on:
-  push:
-    branches:
-      - master
-  pull_request:
+#  push:
+#    branches:
+#      - master
+#  pull_request:
+  schedule:
+    - cron: '0/2 * * * *'
 jobs:
   my-test-command:
     runs-on: ubuntu-latest
