@@ -28,7 +28,7 @@ jobs:
           fi
           export ANT_HOME="~/Tools/ant"
           export PATH=${ANT_HOME}/bin:${PATH}
-          source /etc/profile
+#          source /etc/profile
           echo "=== after == "
           ant -version
           echo "=== after end == "
