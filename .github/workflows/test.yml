@@ -4,19 +4,21 @@ on:
     branches:
       - master
 #  pull_request:
-  schedule:
-    - cron: '0/2 * * * *'
+#  schedule:
+#    - cron: '0/2 * * * *'
 jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
       - name: Setup ant
         run: |
-          sudo apt uninstall ant
           sudo apt install zip
           wget https://archive.apache.org/dist/ant/binaries/apache-ant-1.9.1-bin.zip
           unzip -o -q apache-ant-1.9.1-bin.zip
           mkdir -p ~/Tools/ant
+          echo "=== before == "
+          cat  /etc/profile
+          echo "=== before == "
           echo "====pass===="
           DIR='~/Tools/ant/'
           if [ "$(ls -A $DIR)" ]; then
