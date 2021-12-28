@@ -20,15 +20,8 @@ jobs:
           cat  /etc/profile
           echo "=== before == "
           echo "====pass===="
-          DIR='~/Tools/ant/'
-          if [ "$(ls -A $DIR)" ]; then
-              echo "$DIR is not empty"
-          else
-               mv apache-ant-1.9.1/* ~/Tools/ant
-          fi
           export ANT_HOME="~/Tools/ant"
           export PATH=${ANT_HOME}/bin:${PATH}
-#          source /etc/profile
           echo "=== after == "
           ant -version
           echo "=== after end == "
