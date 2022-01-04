@@ -26,7 +26,9 @@ jobs:
           echo "=== after == "
           ant -version
           echo ${PATH}
+          echo "=== Docker == "
           sudo docker version
+          sudo docker run hello-world
           echo "=== after end == "
 
 
