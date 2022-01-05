@@ -27,12 +27,15 @@ jobs:
           sudo apt-get update
           sudo apt-get install docker-ce docker-ce-cli containerd.io
           sudo docker run hello-world
+           sudo adduser docker
           if id -u "docker" >/dev/null 2>&1; then
+            echo "=====user exists===="
             sudo deluser docker
           fi
-          sudo adduser umesh
-          sudo usermod -aG sudo umesh
-          groups umesh
+          sudo adduser docker
+          sudo adduser docker
+          sudo usermod -aG sudo docker
+          groups docker
 
       - name: Setup ant
         run: |
