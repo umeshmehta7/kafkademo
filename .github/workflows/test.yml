@@ -12,6 +12,9 @@ jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
+      - name: dispatchevent payload
+        run: |
+          echo ${{ github.event.client_payload }}
       - name: setup docker
         run: |
           echo $USER
