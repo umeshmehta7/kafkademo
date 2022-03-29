@@ -14,7 +14,8 @@ jobs:
     steps:
       - name: dispatchevent payload
         run: |
-          echo ${{ github.event.client_payload }}
+          echo "FirstName: " ${{ github.event.client_payload.firstName }}
+          echo "LastName: " ${{ github.event.client_payload.lastName }}
       - name: setup docker
         run: |
           echo $USER
