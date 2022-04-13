@@ -8,8 +8,8 @@ on:
 #  pull_request:
 #  schedule:
 #    - cron: '0/2 * * * *'
-  env:
-    VAR1: "Global"
+env:
+  VAR1: "Global"
 jobs:
   my-test-command:
     runs-on: ubuntu-latest
