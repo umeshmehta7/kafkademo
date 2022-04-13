@@ -2,9 +2,9 @@ name: test workflow
 on:
   repository_dispatch:
     types: [test_result]
-#  push:
-#    branches:
-#      - master
+  push:
+    branches:
+      - master
 #  pull_request:
 #  schedule:
 #    - cron: '0/2 * * * *'
