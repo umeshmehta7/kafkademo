@@ -9,6 +9,8 @@ on:
 #  schedule:
 #    - cron: '0/2 * * * *'
 jobs:
+  env:
+    var1: "Global"
   my-test-command:
     runs-on: ubuntu-latest
     steps:
@@ -92,6 +94,9 @@ jobs:
 
       - name: Print readme file from cache
         run: echo "${{ steps.cache-readme.outputs.cache-hit}}"
+
+      -name: print global variable
+       run: echo ${var1}
 
   print-cached-file:
     runs-on: ubuntu-latest
