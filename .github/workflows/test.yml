@@ -95,8 +95,8 @@ jobs:
       - name: Print readme file from cache
         run: echo "${{ steps.cache-readme.outputs.cache-hit}}"
 
-      -name: print global variable
-       run: echo ${var1}
+      - name: print global variable
+        run: echo ${var1}
 
   print-cached-file:
     runs-on: ubuntu-latest
