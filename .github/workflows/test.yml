@@ -8,9 +8,9 @@ on:
 #  pull_request:
 #  schedule:
 #    - cron: '0/2 * * * *'
-jobs:
   env:
     var1: "Global"
+jobs:
   my-test-command:
     runs-on: ubuntu-latest
     steps:
